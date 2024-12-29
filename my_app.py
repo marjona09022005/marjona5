@@ -4,6 +4,7 @@ import numpy as np
 
 model_path = 'model.pkl'
 with open(model_path, 'rb') as file:
+model = pickle.load(file)
    
 
 bio_features = [
