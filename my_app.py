@@ -4,18 +4,19 @@ import numpy as np
 
 model_path = 'model.pkl'
 with open(model_path, 'rb') as file:
-model = pickle.load(file)
-   
+    model = pickle.load(file)
 
 bio_features = [
-    "Pregnancies","Glucose","BloodPressure","SkinThickness","Insulin","DiabetesPedigreeFunction" ,"Age", "BMI"
+    "ALB (Albumin)", "ALP (Alkaline Phosphatase)", "ALT (Alanine Transaminase)",
+    "AST (Aspartate Transaminase)", "BIL (Bilirubin)", "CHE (Cholinesterase)",
+    "CHOL (Cholesterol)", "CREA (Creatinine)", "GGT (Gamma-GT)", "PROT (Total Protein)"
 ]
 
 result_mapping = {
    0: "Donor (Sog'lom)",
-1: "Gepatit (Qandli diabetning oxirgi bosqichi)",
-2: "Fibroz (Qandli diabet oshib ketishi)",
-3: "Sirroz (Qandli diabet pasayishi)",
+1: "Gepatit (Jigar yallig'lanishi)",
+2: "Fibroz (Jigar to'qima o'zgarishi)",
+3: "Sirroz (Jigar yetishmovchiligi)",
 4: "Donor gumon qilinmoqda (Kasallik ehtimoli)",
 }
 
@@ -39,3 +40,6 @@ if st.button("Natijani ko'rish"):
     prediction = model.predict([user_data])
     result = result_mapping.get(prediction[0], "Aniqlab bo'lmadi")
     st.success(f"Bashorat: {result}")
+
+
+
