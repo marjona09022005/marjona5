@@ -7,20 +7,18 @@ with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
 bio_features = [
-    "ALB (Albumin)", "ALP (Alkaline Phosphatase)", "ALT (Alanine Transaminase)",
-    "AST (Aspartate Transaminase)", "BIL (Bilirubin)", "CHE (Cholinesterase)",
-    "CHOL (Cholesterol)", "CREA (Creatinine)", "GGT (Gamma-GT)", "PROT (Total Protein)"
+   "Pregnancies","Glucose","BloodPressure","SkinThickness","Insulin","DiabetesPedigreeFunction" ,"Age", "BMI"
 ]
 
 result_mapping = {
    0: "Donor (Sog'lom)",
-1: "Gepatit (Jigar yallig'lanishi)",
-2: "Fibroz (Jigar to'qima o'zgarishi)",
-3: "Sirroz (Jigar yetishmovchiligi)",
+1: "Gepatit (Qandli diabetga uchrash)",
+2: "Fibroz (Qandli diabetning oshib ketishi)",
+3: "Sirroz (Qandli diabet pasayishi)",
 4: "Donor gumon qilinmoqda (Kasallik ehtimoli)",
 }
 
-st.title("Jigar Kasalligi tashxisi")
+st.title("Qandli diabet Kasalligi tashxisi")
 
 age = st.number_input("Yoshni kiriting", min_value=1, max_value=100, value=25, step=1)
 sex = st.radio("Jinsni tanlang", options=["Erkak", "Ayol"])
