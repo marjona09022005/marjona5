@@ -12,9 +12,9 @@ bio_features = [
 
 result_mapping = {
    0: "Donor (Sog'lom)",
-1: "Gepatit (Qandli deabning oxirgi bosqichi)",
-2: "Fibroz (Qandli deabet oshib ketishi)",
-3: "Sirroz (Qandli deabet pasayishi)",
+1: "Gepatit (Qandli diabetning oxirgi bosqichi)",
+2: "Fibroz (Qandli diabet oshib ketishi)",
+3: "Sirroz (Qandli diabet pasayishi)",
 4: "Donor gumon qilinmoqda (Kasallik ehtimoli)",
 }
 
